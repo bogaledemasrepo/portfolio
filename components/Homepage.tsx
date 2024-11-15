@@ -1,27 +1,30 @@
-'use client';
+"use client";
+import Link from "next/link";
 import React from "react";
 import Herophoto from "./Herophoto";
 const Homepage = () => {
-  function fileDownloader() {
-    const a = document.createElement('a')
-          a.download = '../assets/IMG_3069.png';
-          a.href = `data:application/pdf,charset=utf-8,${encodeURIComponent('text')}`;
-          document.body.appendChild(a)
-          a.click()
-          a.remove()
-  }
+  const handleCvDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/bogicv.pdf";
+    link.download = "bogicv.pdf";
+    link.click();
+  };
   return (
     <section
       id="home"
-      className="grid md:grid-cols-1 lg:grid-cols-2 pt-[100px] lg:px-40 md:px-10 sm:px-5s gap-5"
+      className="grid md:grid-cols-1 lg:grid-cols-2 lg:px-10 pt-[100px] md:px-10 sm:px-5s gap-5 justify-self-center"
     >
-      <div className="flex items-center justify-center flex-col sm:w-full">
-        <div className="max-w-[540px] sm:p-2">
-          <h1 className="text-2xl text-sky-500 pt-5 text-center">
+      <div className="card sm:max-w-[32rem]">
+        <div className="w-full flex items-center justify-center">
+          <p className="bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-4xl w-fit">
             Hi! I&apos;m Bogale Demas
-          </h1>
-          <h2 className="text-xl text-sky-500 py-2 text-center">Web & mobile developer</h2>
-          <p className="text-sm text-slate-400 text-justify p-5 align-middle px-10">
+          </p>
+        </div>
+        <div className="card-body">
+          <h5 className="card-title mb-2.5 p-4 text-[#342c3d76]">
+            Web & mobile developer
+          </h5>
+          <p className="mb-4 p-4 text-justify text-lg text-[#342c3d76]">
             Creative web and mobile developer with a strong background in
             graphic design and latest javascript framework reactjs, react native
             ,and nextjs. Commited to delivering visualy stunning and user
@@ -29,36 +32,30 @@ const Homepage = () => {
             coding and design principles. If you want to such like developer, I
             am exited to work with you!
           </p>
-        </div>
-        <div className="w-full my-3 flex flex-col items-center justify-center lg:hidden">
-          <Herophoto />
-        </div>
-        <div className="w-full my-3 flex flex-col items-center justify-center">
-          <div className="flex flex-col">
-            {[
-              { name: "Email", val: "bogidemas@gmail.com" },
-              { name: "Tel", val: "+251923872187" },
-            ].map(({ name, val }) => (
-              <div key={name}>
-                <h1 className="text-xl text-sky-500">
-                  {name}:{" "}
-                  <span className="text-sm text-slate-500 ml-2">{val}</span>
-                </h1>
-              </div>
-            ))}
+          <div className="p-4 text-lg text-[#342c3d76]">
+            <p>
+              Email:{" "}
+              <Link href={"bogidemas@gmail.com"}>bogidemas@gmail.com</Link>
+            </p>
+            <p>Tel: +251923872187</p>
           </div>
-          <div className="flex flex-1 gap-2 items-center justify-evenly">
-            <button onClick={fileDownloader}
-            className="p-2 h-10 bg-red-300 text-sm md:text-lg border-none rounded-lg text-neutral-50 my-4 mx-2">
+          <div className="card-actions p-4 flex gap-4">
+            <button
+              className="btn text-lg text-[#342c3d76] border flex-1 border-spacing-1 border-gray-400"
+              onClick={handleCvDownload}
+            >
               Download cv
             </button>
-            <button className="p-2 h-10  text-slate-500 border-l-rose-700 bg-amber-300 rounded-md text-sm md:text-xl">
+            <button
+              className="btn text-lg btn-gradient btn-primary flex-1"
+              type="submit"
+            >
               Hire me know!
             </button>
           </div>
         </div>
       </div>
-      <div className="hidden lg:flex">
+      <div className="card group hover:shadow sm:max-w-[32rem]">
         <Herophoto />
       </div>
     </section>

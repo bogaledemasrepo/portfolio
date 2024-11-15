@@ -1,49 +1,64 @@
-"use client"
-import { navLink } from "@/constants/navlink";
-import React, { useState } from "react";
-import ILink from "./ILink";
-import { HiOutlineMenu } from "react-icons/hi";
+"use client";
+import { navLinks } from "@/constants/navlink";
+
+import Link from "next/link";
+import { useState } from "react";
 
 const Header = () => {
-  const [closed, setClosed] = useState(false);
+  const [dispBlockNav, setDispBlockNav] = useState(true);
   return (
-    <header className="h-[60px] w-full flex justify-between shadow-sm items-center bg-slate-300 lg:px-40 md:px-10 sm:px-5 fixed top-0 left-0">
-      <div>
-        <h1 className="text-red-400 text-xl">
-          <span className="text-2xl text-red-500 p-1 border-2 border-sky-500 rounded-full">
-            B
-          </span>
-          ogi.
-        </h1>
-      </div>
-      <nav className="">
-        <div>
-          <button
-            className="text-2xl text-red-400 md:hidden"
-            onClick={() => setClosed(!closed)}
-          >
-            <HiOutlineMenu />
-          </button>
-        </div>
-        {closed && (
-          <ul className="absolute right-0 top-[60px] flex flex-col items-end justify-end bg-slate-300 md:hidden">
-            {navLink.map(({ name, link }) => (
-              <ILink
-                key={name}
-                name={name}
-                link={link}
-                className="w-[160px] p-2 flex items-center justify-center"
+    <nav className="fixed top-0 z-50 navbar rounded-box flex w-full gap-2 shadow max-sm:flex-col sm:items-center">
+      <div className="flex w-full items-center justify-between">
+        <div className="navbar-start items-center justify-between max-sm:w-full">
+          <Link href="/" aria-label="Homepage Link">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M17.6745 16.9224L12.6233 10.378C12.2167 9.85117 11.4185 9.8611 11.0251 10.3979L6.45728 16.631C6.26893 16.888 5.96935 17.0398 5.65069 17.0398H3.79114C2.9635 17.0398 2.49412 16.0919 2.99583 15.4336L11.0224 4.90319C11.4206 4.38084 12.2056 4.37762 12.608 4.89668L20.9829 15.6987C21.4923 16.3558 21.024 17.3114 20.1926 17.3114H18.4661C18.1562 17.3114 17.8638 17.1677 17.6745 16.9224ZM12.5866 15.5924L14.8956 18.3593C15.439 19.0105 14.976 20 14.1278 20H9.74075C8.9164 20 8.4461 19.0586 8.94116 18.3994L11.0192 15.6325C11.4065 15.1169 12.1734 15.0972 12.5866 15.5924Z"
+                fill="oklch(var(--p))"
               />
-            ))}
-          </ul>
-        )}
-        <ul className="hidden md:flex align-center justify-between">
-          {navLink.map(({ name, link }) => (
-            <ILink key={name} name={name} link={link} className="px-3 mx-1" />
+            </svg>
+          </Link>
+          <div className="sm:hidden">
+            <button
+              type="button"
+              className="collapse-toggle btn btn-outline btn-secondary btn-sm btn-square"
+              onClick={() => setDispBlockNav(!dispBlockNav)}
+            >
+              {dispBlockNav ? (
+                <span className="icon-[tabler--menu-2] size-4"></span>
+              ) : (
+                <span className="icon-[tabler--x] size-4"></span>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        id="logo-navbar-collapse"
+        className={`sm:navbar-end collapse ${
+          dispBlockNav && "hidden"
+        }  grow basis-full overflow-hidden transition-[height] duration-300 max-sm:w-full`}
+      >
+        <ul className="menu sm:menu-horizontal gap-2 p-0">
+          {navLinks.map(({ link, name }) => (
+            <li
+              key={link}
+              className="font-semibold text-[#342c3d76] border border-spacing-1 hover:border-gray-300"
+            >
+              <Link href={link}>{name}</Link>
+            </li>
           ))}
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 };
 
