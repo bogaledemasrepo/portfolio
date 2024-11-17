@@ -21,7 +21,7 @@ const HeroAndDisc = () => {
         </div>
         <div className="card w-full justify-self-center items-center shadow-none">
           <div className="card-header">
-            <h5 className="card-title text-center font-bold text-[#6c4242] text-xl">
+            <h5 className="card-title text-center font-bold  text-[#342c3d76] text-xl">
               Wellcome hire!
             </h5>
           </div>
@@ -37,7 +37,7 @@ const HeroAndDisc = () => {
             <Image src={aboutimg} alt="about bogale" className="rounded-lg p-4" />
           </div>
           <div className="card-header">
-            <h5 className="card-title text-center font-bold text-[#6c4242] text-xl">
+            <h5 className="card-title text-center font-bold  text-[#342c3d76] text-xl">
               Educational background
             </h5>
           </div>

@@ -4,10 +4,12 @@ import React from "react";
 
 const About = () => {
   return (
-    <main className="min-h-screen w-screen overflow-scroll relative">
-      <HeroAndDisc />
-      <Skills />
-    </main>
+    <div className="flex items-center justify-center relative">
+      <main className="w-full max-w-[1080px] overflow-scroll relative">
+        <HeroAndDisc />
+        <Skills />
+      </main>
+    </div>
   );
 };
 
