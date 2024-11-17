@@ -1,17 +1,12 @@
-export  const projectsList = [
+
+export const projects = [
     {
-        title:'Web Development',
-        discr: 'High quality web application development using reactjs, nextjs with modern styling technology tailwind.'
-        ,img:''
+      title: "Niky Landing page",
+      discription: `Creative web and mobile developer with a strong background in
+                  graphic design and latest javascript framework reactjs, react
+                  native ,and nextjs.`,
+      tubnail: "url('/big-shoe1.png')",
+      sourceCode: "#",
+      previewLink: "#",
     },
-    {
-        title:'Mobile Development',
-        discr:'Mobile application development using react native with sql and non-sql database mongodb,sqlite, and mysql. '
-        ,img:''
-    },
-    {
-        title:'Mobile Development',
-        discr:'Mobile application development using react native with sql and non-sql database mongodb,sqlite, and mysql. '
-        ,img:''
-    }
-]
+  ];
