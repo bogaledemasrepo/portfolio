@@ -22,7 +22,7 @@ const Footer = () => {
               className="link"
               aria-label="Linkdin Link"
             >
-              <span className="icon-[tabler--brand-linkdin] size-5"></span>
+              <span className="icon-[tabler--brand-linkedin] size-5"></span>
             </Link>
           </div>
         </div>
