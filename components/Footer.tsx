@@ -11,20 +11,18 @@ const Footer = () => {
           </aside>
           <div className="flex h-5 gap-4 text-lg text-[#342c3d76]">
             <Link
-              href="https://github.com/Bogale"
+              href="https://github.com/Boagale"
               className="link"
               aria-label="Github Link"
             >
               <span className="icon-[tabler--brand-github] size-5"></span>
             </Link>
-            <Link href="#" className="link" aria-label="Facebook Link">
-              <span className="icon-[tabler--brand-facebook] size-5"></span>
-            </Link>
-            <Link href="#" className="link" aria-label="X Link">
-              <span className="icon-[tabler--brand-x] size-5"></span>
-            </Link>
-            <Link href="#" className="link" aria-label="Google Link">
-              <span className="icon-[tabler--brand-google] size-5"></span>
+            <Link
+              href="https://www.linkedin.com/in/bogale-demas-4b897325b?trk=contact-info"
+              className="link"
+              aria-label="Linkdin Link"
+            >
+              <span className="icon-[tabler--brand-linkdin] size-5"></span>
             </Link>
           </div>
         </div>
