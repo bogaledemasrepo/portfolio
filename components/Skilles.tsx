@@ -1,5 +1,5 @@
 import React from "react";
-
+import { technicalSkills } from "@/constants/technicalSkill";
 const Skills = () => {
   return (
     <section className="w-full flex flex-col items-center">
@@ -9,7 +9,9 @@ const Skills = () => {
       <div className="w-full px-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="card w-full justify-self-center p-4">
           <div className="card-header">
-            <h5 className="card-title text-center font-bold text-[#6c4242] text-xl">General Skills</h5>
+            <h5 className="card-title text-center font-bold text-[#6c4242] text-xl">
+            Technical Skills
+            </h5>
           </div>
           <div className="card-body flex flex-col gap-4 p-10">
             {[
@@ -37,21 +39,22 @@ const Skills = () => {
         </div>
         <div className="card w-full justify-self-center">
           <div className="card-header">
-            <h5 className="card-title text-center font-bold text-[#6c4242] text-xl">Technical Skills</h5>
+            <h5 className="card-title text-center font-bold text-[#6c4242] text-xl">
+            General Skills
+            </h5>
           </div>
-          <div className="w-full card-body flex flex-col gap-4 p-10">
-            <div className="progress h-4 w-[100%]">
-              <div className="progress-bar h-4 w-[40%]"></div>
+          <div className="w-full card-body grid grid-cols-2 gap-4 p-10">
+            {technicalSkills.map(({title,value})=>(
+
+            <div className="card items-center justify-center gap-2" key={title}>
+              <div
+                className="radial-progress text-[#6c4242] border-4 border-transparent"
+                style={{ "--value": value }}
+
+              >{value}%</div>
+              <p className="font-semibold">{title}</p>
             </div>
-            <div className="progress h-4 w-[100%]">
-              <div className="progress-bar h-4 w-[40%]"></div>
-            </div>
-            <div className="progress h-4 w-[100%]">
-              <div className="progress-bar h-4 w-[40%]"></div>
-            </div>
-            <div className="progress h-4 w-[100%]">
-              <div className="progress-bar h-4 w-[40%]"></div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
