@@ -49,7 +49,7 @@ const Skills = () => {
             <div className="card items-center justify-center gap-2" key={title}>
               <div
                 className="radial-progress text-[#6c4242] border-4 border-transparent"
-                style={{ "--value": value }}
+                style={{ "--value": parseInt(value) }}
 
               >{value}%</div>
               <p className="font-semibold">{title}</p>
