@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.3",
+    "@mui/material": "^6.4.3",
     "flyonui": "^1.1.0",
     "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.3.0"
+    "react-icons": "^5.3.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/node": "^20",
