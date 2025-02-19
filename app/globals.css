@@ -2,41 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-*{
-  scroll-behavior: smooth;
-}
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
 @layer components {
-  .text-gradiant {
-    @apply: bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-2xl w-fit;
-  }
-}
-
-@layer components{
-  .mygrid{
+  .mygrid {
     grid-template-columns: 10rem calc(100% - 10rem);
   }
 }
