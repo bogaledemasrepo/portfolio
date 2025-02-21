@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import FileUpload from "./FileUpload";
 import PInput from "./PInput";
+import { useRouter } from "next/navigation";
 
 function PUForm() {
+  const router = useRouter();
   const [btnDisable, setBtnDisable] = useState(false);
 
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setBtnDisable(true);
-    await fetch("http://localhost:3000/api/projects", {
+    const resp = await fetch("http://localhost:3000/api/projects", {
       method: "POST",
       body: new FormData(e.currentTarget),
     });
+    const { success } = await resp.json();
+    console.log(success);
+    setBtnDisable(false);
+    if (success) {
+      router.push("/projects");
+    }
   };
   return (
     <div className="w-full flex items-center justify-center min-h-screen">

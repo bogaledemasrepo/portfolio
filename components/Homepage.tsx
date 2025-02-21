@@ -20,17 +20,24 @@ const Homepage = () => {
           </div>
           <div className="card-body">
             <h5 className="card-title mb-2.5 p-4 text-[#342c3d76]">
-              Web & mobile developer
+              Senior Software developer
             </h5>
-            <p className="mb-4 p-4 text-justify text-lg text-[#342c3d76]">
-              Creative web and mobile developer with a strong background in
-              graphic design and latest javascript framework reactjs, react
-              native ,and nextjs. Commited to delivering visualy stunning and
-              user friendly web and mobile applications by lavraging my
-              expertise in coding and design principles. If you want to such
-              like developer, I am exited to work with you!
+            <p className="p-4 text-justify text-[#342c3da1]">
+              Highly skilled software developer with extensive experience in
+              building robust web and mobile applications. Proficient in
+              utilizing modern thechologies such as Next.js, React.js,
+              TypeScript, Express.js, tailwindcss for developing responsive and
+              scalable web applications and react-native for mobile applications
+              by lavraging the capablity of expo to deliver high-quality cross
+              platform applications.
             </p>
-            <div className="p-4 text-lg text-[#342c3d76]">
+            <p className="p-4 text-justify text-[#342c3da1]">
+              {" "}
+              A collaborative team player with excelent problem-solviing
+              capablity and a passion for continous learning and adapting to
+              emerging technologies.
+            </p>
+            <div className="px-4 text-sm text-[#342c3d76]">
               <p>
                 Email:{" "}
                 <Link href={"bogidemas@gmail.com"}>bogidemas@gmail.com</Link>

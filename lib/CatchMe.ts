@@ -11,7 +11,6 @@ async function CatchMe(fun: () => unknown) {
       const resault = await fun();
       if (resault) responce.data = resault;
     } catch (error) {
-      console.log("Error .......check", error);
       responce.success = false;
       responce.data = ["Server error", error];
     }

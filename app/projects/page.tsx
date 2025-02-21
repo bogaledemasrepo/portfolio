@@ -1,11 +1,11 @@
 "use client";
 import Loading from "@/components/Loading";
-// import { revalidatePath } from "next/cache";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Projects = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); //
   const [projects, setProjects] = useState([]);
   const getProjectList = async () => {
     setIsLoading(true);
@@ -26,11 +26,11 @@ const Projects = () => {
           <p className="bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-2xl w-fit py-10 uppercase">
             <span className="underline">My projects</span> list!
           </p>
-          <Link href="/projects/new" className="absolute right-8">
-            <button className="btn text-sm md:text-lg  text-[#342c3d76] border flex-1 border-spacing-1 border-gray-400">
-              Add project
-            </button>
-          </Link>
+          <div className="absolute right-8">
+            <Link href="/projects/new">
+              <p className="text-[#342c3d76]">Add project</p>
+            </Link>
+          </div>
         </div>
         <div className="w-full  flex flex-wrap gap-2 px-8">
           {isLoading && (
@@ -40,12 +40,19 @@ const Projects = () => {
           )}
 
           {projects.map(
-            ({ title, discription, tubnail, sourceCode, previewlink }) => (
-              <div key={title} className="min-w-[360px] flex-1">
-                <div
-                  style={{ backgroundImage: tubnail }}
-                  className="group bg-left bg-no-repeat bg-contain bg-gray-200 rounded-md border border-spacing-1 border-gray-200 shadow-md w-full "
-                >
+            ({ _id, title, tubnail, discription, sourceCode, previewlink }) => (
+              <Link
+                href={`/projects/${_id}`}
+                key={title}
+                className="min-w-[360px] flex relative flex-1"
+              >
+                <Image
+                  src={tubnail}
+                  fill
+                  alt=""
+                  className="absolute w-full h-full overflow-hidden"
+                />
+                <div className="bg-gray-200 rounded-md border order-spacing-1 border-gray-200 shadow-md w-full ">
                   <div className="card-body w-full max-w-[42rem] justify-self-end bg-slate-200 opacity-90 z-50">
                     <h5 className="card-title mb-2.5 p-4 text-[#342c3d76]">
                       {title}
@@ -68,7 +75,7 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             )
           )}
         </div>

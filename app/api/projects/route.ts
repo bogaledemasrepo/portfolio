@@ -9,7 +9,7 @@ export async function POST(reqesit: NextRequest) {
     const body = Object.fromEntries(formData);
     const file = (body.tubnail as File) || null;
     if (!file) throw new Error("tubnail not found");
-    const { success, path } = await uploadFile(file);
+    const { success, path } = await uploadFile(file, body.title as string);
     if (!success) throw new Error("Image upload fild");
 
     const newProject = new Projects({
@@ -20,19 +20,17 @@ export async function POST(reqesit: NextRequest) {
       previewlink: body.previewlink,
     });
     try {
-      console.log(newProject);
       const resualt = await newProject.save();
-      return resualt;
+      return { success: false, data: resualt };
     } catch (error) {
       console.log(error);
-      return [];
+      return { success: false, data: [] };
     }
   });
 }
 export async function GET() {
   return CatchMe(async () => {
     const resualt = await Projects.find();
-    console.log(resualt);
     return resualt;
   });
 }
