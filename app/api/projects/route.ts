@@ -1,8 +1,8 @@
+export const runtime = "edge";
 import CatchMe from "@/lib/CatchMe";
 import { uploadFile } from "@/lib/FileUpload";
 import Projects from "@/models/Projects";
 import { NextRequest } from "next/server";
-export const runtime = "edge";
 export async function POST(reqesit: NextRequest) {
   return CatchMe(async () => {
     const formData = await reqesit.formData();
