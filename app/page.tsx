@@ -11,7 +11,7 @@ export default function Home() {
   };
   return (
     <main className="flex items-center justify-center relative min-h-screen my-8">
-      <div className="max-w-[1080px] grid md:grid-cols-1 lg:grid-cols-2 lg:px-10 pt-[100px] md:px-10 sm:px-5 gap-5 justify-self-center">
+      <div className="max-w-[1080px] grid md:grid-cols-1 lg:grid-cols-2 lg:px-10  md:px-10 sm:px-5 gap-5 justify-self-center">
         <div className="card sm:max-w-[32rem]">
           <div className="w-full flex items-center justify-center">
             <p className="bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-4xl w-fit">

@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { useState } from "react";
+import Blocknav from "./Blocknav";
+import Inlinenav from "./Inlinenav";
 
 const Header = () => {
   const navLinks = [
@@ -25,7 +27,7 @@ const Header = () => {
   ];
   const [dispBlockNav, setDispBlockNav] = useState(true);
   return (
-    <div className="flex items-center justify-center relative">
+    <div className="flex flex-col items-center justify-center relative">
       <nav className="max-w-[1080px] fixed top-0 z-50 navbar flex w-full gap-2 shadow max-sm:flex-col sm:items-center">
         <div className="flex w-full items-center justify-between">
           <div className="navbar-start items-center justify-between max-sm:w-full">
@@ -58,19 +60,11 @@ const Header = () => {
           className={`sm:navbar-end collapse ${
             dispBlockNav && "hidden"
           }  grow basis-full overflow-hidden transition-[height] duration-300 max-sm:w-full`}
-        >
-          <ul className="menu sm:menu-horizontal gap-2 p-0">
-            {navLinks.map(({ link, name }) => (
-              <li
-                key={link}
-                className="font-semibold text-[#342c3d76] border border-spacing-1 hover:border-gray-300"
-              >
-                <Link href={link}>{name}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        ></div>
+        <Inlinenav links={navLinks} />
       </nav>
+      <div className="h-[100px] w-full"></div>
+      <Blocknav links={navLinks} isHidden={dispBlockNav} />
     </div>
   );
 };
