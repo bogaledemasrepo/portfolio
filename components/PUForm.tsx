@@ -10,7 +10,7 @@ function PUForm() {
     e.preventDefault();
     setBtnDisable(true);
     try {
-      const resp = await fetch("/api/projects", {
+      const resp = await fetch(`${window.location.hostname}/api/projects`, {
         method: "POST",
         body: new FormData(e.currentTarget),
       });

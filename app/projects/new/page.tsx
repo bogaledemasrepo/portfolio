@@ -10,7 +10,7 @@ export default function Page() {
   const [passKey, setPassKey] = useState("");
   const handleAdminVerification = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const responce = await fetch("http://localhost:3000/api/admin", {
+    const responce = await fetch(`${window.location.hostname}/api/admin`, {
       method: "POST",
       body: JSON.stringify({ passkey: passKey }),
     });
