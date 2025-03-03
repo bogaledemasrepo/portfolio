@@ -1,6 +1,5 @@
 import React from "react";
-import CopyEmailButton from "./CopyEmailBtn";
-const Contact = () => {
+const page = () => {
   return (
     <section className="my-10 pt-10 p-5">
       <div className="w-full flex items-center justify-center my-8">
@@ -22,7 +21,7 @@ const Contact = () => {
             <p className="py-4 font-semibold flex-1 text-left">
               let us discuss how can I help you?
             </p>
-            <CopyEmailButton />
+            {/* <CopyEmailButton /> */}
           </div>
         </div>
         <div className="card w-full max-w-[32rem] p-2">
@@ -84,4 +83,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default page;

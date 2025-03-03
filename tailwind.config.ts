@@ -1,19 +1,16 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from "tailwindcss";
-const config: Config = {
+
+export default {
   content: [
+    "./node_modules/flyonui/dist/js/*.js",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/flyonui/dist/js/*.js",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+    extend: {},
   },
-  plugins: [require("flyonui"), require("flyonui/plugin")], // Cast the plugin to the correct type
-};
-export default config;
+  plugins: [require("flyonui"), require("flyonui/plugin")],
+} satisfies Config;
+// tailwind.config.ts
