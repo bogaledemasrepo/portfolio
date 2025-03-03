@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .mygrid {
+    grid-template-columns: 10rem calc(100% - 10rem);
+  }
+}
