@@ -32,7 +32,7 @@ const Projects = () => {
         };
     try {
       setIsLoading(true);
-      const resp = await fetch(`${window.location.hostname}/api/projects`);
+      const resp = await fetch(`/api/projects`);
       const jsonData = (await resp.json()) as JsonData;
 
       if (!resp.ok) throw new Error("Failed to fetch projects");
