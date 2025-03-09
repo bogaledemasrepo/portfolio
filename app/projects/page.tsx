@@ -118,6 +118,7 @@ const Projects = () => {
           })}
         </div>
       </section>
+      <div className="w-full h-16 bg-transparent"></div>
     </main>
   );
 };

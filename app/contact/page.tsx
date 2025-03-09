@@ -1,14 +1,15 @@
+import ContactForm from "@/components/ContactForm";
 import React from "react";
 const page = () => {
   return (
-    <section className="my-10 pt-10 p-5">
+    <section className="my-10 pt-10 max-w-[1080px] mx-auto">
       <div className="w-full flex items-center justify-center my-8">
         <p className="bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-2xl w-fit">
           Do you want to start project togather?
         </p>
       </div>
-      <div className="flex flex-row  flex-wrap py-5 items-center justify-center gap-4">
-        <div className="card shadow-none w-full max-w-[32rem] p-2">
+      <div className="flex flex-col md:flex-row gap-4 p-5 my-8">
+        <div className="w-full max-w-[480px] mx-auto">
           <div className="card-header flex items-center justify-center">
             <h5 className="card-title">Reach out to me today</h5>
           </div>
@@ -21,64 +22,13 @@ const page = () => {
             <p className="py-4 font-semibold flex-1 text-left">
               let us discuss how can I help you?
             </p>
-            {/* <CopyEmailButton /> */}
           </div>
         </div>
-        <div className="card w-full max-w-[32rem] p-2">
-          <div className="card-header shadow-sm flex items-center justify-center">
-            <h5 className="card-title">Contact me!</h5>
-          </div>
-          <div className="card-body mt-4">
-            <form action="" className="flex flex-col gap-4">
-              <div className="form-control w-full">
-                <input
-                  type="text"
-                  placeholder="John Doe"
-                  className="input input-filled peer"
-                />
-                <label className="input-filled-label text-[#342c3d76]">
-                  Full Name
-                </label>
-                <span className="input-filled-focused"></span>
-              </div>
-              <div className="form-control w-full">
-                <input
-                  type="text"
-                  placeholder="jhon@gmail.com"
-                  className="input input-filled peer"
-                />
-                <label className="input-filled-label text-[#342c3d76]">
-                  Email
-                </label>
-                <span className="input-filled-focused"></span>
-              </div>
-              <div className="form-control sm:w-full">
-                <textarea
-                  className="textarea textarea-floating peer"
-                  placeholder="Hello!!!"
-                ></textarea>
-                <span className="textarea-floating-label text-[#342c3d76]">
-                  Message
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  className="btn btn-outline btn-warning flex-1"
-                  type="reset"
-                >
-                  Clear
-                </button>
-                <button
-                  className="btn btn-gradient btn-primary flex-1"
-                  type="submit"
-                >
-                  Send
-                </button>
-              </div>
-            </form>
-          </div>
+        <div className="w-full max-w-[480px] mx-auto h-[400px]">
+          <ContactForm />
         </div>
       </div>
+      <div className="w-full h-16 bg-transparent"></div>
     </section>
   );
 };
