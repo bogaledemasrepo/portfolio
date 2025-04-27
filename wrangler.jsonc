@@ -10,14 +10,15 @@
   "pages_build_output_dir": ".vercel/output/static",
   "observability": {
     "enabled": true
-  },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "projects",
-      "database_id": "b435e32c-4c63-451b-b9b8-ddcdadbc463c"
-    }
-  ]
+  }
+  // ,
+  // "d1_databases": [
+  //   {
+  //     "binding": "DB",
+  //     "database_name": "projects",
+  //     "database_id": "b435e32c-4c63-451b-b9b8-ddcdadbc463c"
+  //   }
+  // ]
 
   /**
    * Smart Placement

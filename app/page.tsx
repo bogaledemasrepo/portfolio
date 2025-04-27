@@ -63,7 +63,7 @@ export default function Home() {
           </div>
           <div className="card group hover:shadow sm:max-w-[32rem]">
             <div className="flex items-center justify-center w-full rounded-full p-10 max-w-[540px]">
-              <Image src={heroPhoto} alt="hero" className="rounded-lg" />
+              <Image src={heroPhoto} alt="hero" className="rounded-lg " />
             </div>
           </div>
         </div>

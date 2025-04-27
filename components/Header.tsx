@@ -27,7 +27,7 @@ const Header = () => {
   ];
   const [dispBlockNav, setDispBlockNav] = useState(true);
   return (
-    <div className="flex flex-col items-center justify-center relative">
+    <div className="flex dark:bg-black flex-col items-center justify-center relative">
       <nav className="max-w-[1080px] fixed top-0 z-50 navbar flex w-full gap-2 shadow max-sm:flex-col sm:items-center">
         <div className="flex w-full items-center justify-between">
           <div className="navbar-start items-center justify-between max-sm:w-full">
