@@ -10,7 +10,7 @@ export default function Page() {
   const [passKey, setPassKey] = useState("");
   const handleAdminVerification = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const responce = await fetch(`/api/admin`, {
+    const responce = await fetch("http://localhost:3000/api/admin", {
       method: "POST",
       body: JSON.stringify({ passkey: passKey }),
     });
@@ -25,7 +25,7 @@ export default function Page() {
 
   return (
     (isAmin && <PUForm />) || (
-      <div className="absolute flex w-[100vw] h-screen items-center justify-center">
+      <div className="flex w-[100vw] min-h-[90vh] items-center justify-center">
         <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
           <form
             className="space-y-6 flex flex-col items-center"

@@ -7,7 +7,6 @@ import {
   getProjects,
   uploadTubnail,
 } from "@/appwrite.config";
-import { revalidatePath } from "next/cache";
 
 export async function POST(reqesit: NextRequest) {
   try {
@@ -27,7 +26,6 @@ export async function POST(reqesit: NextRequest) {
       thumbnail: tubnail_url,
     });
     if (responce.error) await deleteTubnail(fileId);
-    revalidatePath("/projects");
     return NextResponse.json(responce);
   } catch (error) {
     console.log(error);

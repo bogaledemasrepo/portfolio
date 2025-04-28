@@ -3,8 +3,8 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { useState } from "react";
-import Blocknav from "./Blocknav";
-import Inlinenav from "./Inlinenav";
+import Icon from "./Icon";
+import Theme from "./Theme";
 
 const Header = () => {
   const navLinks = [
@@ -25,12 +25,12 @@ const Header = () => {
       link: "/contact",
     },
   ];
-  const [dispBlockNav, setDispBlockNav] = useState(true);
+  const [dispBlockNav, setDispBlockNav] = useState(false);
   return (
-    <div className="flex dark:bg-black flex-col items-center justify-center relative">
-      <nav className="max-w-[1080px] fixed top-0 z-50 navbar flex w-full gap-2 shadow max-sm:flex-col sm:items-center">
+    <div className="flex items-center justify-center relative dark:bg-slate-950">
+      <nav className="max-w-[1080px] navbar flex w-full gap-2 shadow max-sm:flex-col sm:items-center dark:bg-slate-950 ">
         <div className="flex w-full items-center justify-between">
-          <div className="navbar-start items-center justify-between max-sm:w-full">
+          <div className="flex items-center justify-between max-sm:w-full">
             <Link href="/" aria-label="Homepage Link">
               <Image
                 src="/images/logo.png"
@@ -43,28 +43,30 @@ const Header = () => {
             <div className="sm:hidden">
               <button
                 type="button"
-                className="collapse-toggle btn btn-outline btn-secondary btn-sm btn-square"
                 onClick={() => setDispBlockNav(!dispBlockNav)}
               >
-                {dispBlockNav ? (
-                  <span className="icon-[tabler--menu-2] size-4"></span>
+                {!dispBlockNav ? (
+                  <Icon className="icon-[tabler--menu-2]" />
                 ) : (
-                  <span className="icon-[tabler--x] size-4"></span>
+                  <Icon className="icon-[tabler--x]" />
                 )}
               </button>
             </div>
           </div>
         </div>
-        <div
-          id="logo-navbar-collapse"
-          className={`sm:navbar-end collapse ${
-            dispBlockNav && "hidden"
-          }  grow basis-full overflow-hidden transition-[height] duration-300 max-sm:w-full`}
-        ></div>
-        <Inlinenav links={navLinks} />
+        <div className={`${!dispBlockNav && "hidden"} sm:block`}>
+          <ul className="flex flex-col sm:flex-row gap-2 p-0">
+            {navLinks.map(({ link, name }) => (
+              <Link key={link} href={link}>
+                <li className="font-semibold dark:text-slate-400 transition-all duration-300 text-[#342c3d76] border border-slate-300 dark:border-slate-700 hover:blur-[1px] p-2">
+                  {name}
+                </li>
+              </Link>
+            ))}
+            {<Theme />}
+          </ul>
+        </div>
       </nav>
-      <div className="h-[100px] w-full"></div>
-      <Blocknav links={navLinks} isHidden={dispBlockNav} />
     </div>
   );
 };
