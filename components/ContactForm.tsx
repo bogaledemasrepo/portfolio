@@ -2,10 +2,8 @@
 import React from "react";
 
 function ContactForm() {
-  const submitHandler = (e: any) => {
+  const submitHandler = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(e.target);
-    console.log(new FormData(e.target));
   };
   return (
     <form action="" className="flex-1" onSubmit={submitHandler}>
