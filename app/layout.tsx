@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-serif`}>
+      <body className={`mono dark:bg-slate-950/90`}>
         <Header />
         {children}
         <Footer />
