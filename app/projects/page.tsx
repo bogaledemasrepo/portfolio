@@ -10,8 +10,6 @@ const Projects = () => {
   const [isLoading, setIsLoading] = useState(false); //
   const [activeFilter, setActiveFilter] = useState("All Projects");
   const searchParams = useSearchParams();
-  const filter = searchParams.get("filter");
-  console.log(searchParams, filter, "Search");
   type Project = {
     $id: string;
     title: string;
@@ -56,7 +54,7 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    switch (filter) {
+    switch (activeFilter || "All Projects") {
       case "backend":
         setActiveFilter("Backend Projects");
         break;
@@ -71,7 +69,7 @@ const Projects = () => {
         break;
     }
     getProjectList();
-  }, [activeFilter, filter]);
+  }, [activeFilter]);
   return (
     <main className="min-h-[90vh] w-full relative mt-[80px] flex justify-center">
       <section className="w-full max-w-[1080px] my-10 relative">
