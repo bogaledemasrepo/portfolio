@@ -28,7 +28,7 @@ const Header = () => {
   const [dispBlockNav, setDispBlockNav] = useState(false);
   return (
     <div className="flex items-center justify-center relative dark:bg-slate-950">
-      <nav className="max-w-[1080px] navbar flex w-full gap-2 shadow max-sm:flex-col sm:items-center dark:bg-slate-950 ">
+      <nav className="max-w-[1080px] navbar flex w-full gap-2 shadow max-sm:flex-col sm:items-center dark:bg-slate-950 bg-white">
         <div className="flex w-full items-center justify-between">
           <div className="flex items-center justify-between max-sm:w-full">
             <Link href="/" aria-label="Homepage Link">
