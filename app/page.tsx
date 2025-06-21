@@ -38,15 +38,12 @@ export default function Home() {
             </div>
             <div className="py-4 flex gap-4">
               <button
-                className="w-full border p-2 border-1 border-blue-300 bg-blue-200 rounded-md font-semibold"
+                className="w-full border p-3 border-1 text-lg border-blue-300 bg-blue-600 rounded-md font-semibold"
                 onClick={handleCvDownload}
               >
                 Download cv
               </button>
-              <button
-                className="w-full font-semibold border p-2 border-1 border-gray-300  rounded-md"
-                type="submit"
-              >
+              <button className="w-full font-semibold border text-lg p-3 border-1 border-gray-300  rounded-md">
                 Hire me know!
               </button>
             </div>

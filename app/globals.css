@@ -9,12 +9,12 @@
 }
 @layer base {
   .title {
-    @apply bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-6xl w-fit;
+    @apply bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-4xl md:text-6xl w-fit;
   }
   .subtitle {
-    @apply font-bold text-center text-2xl text-[#342c3d76] dark:text-slate-500;
+    @apply font-bold text-center text-3xl text-[#342c3d76] dark:text-slate-500;
   }
   p {
-    @apply text-[#342c3da1] dark:text-slate-600;
+    @apply text-[#342c3da1] text-xl text-slate-600;
   }
 }

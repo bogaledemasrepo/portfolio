@@ -21,11 +21,11 @@ const page = () => {
                 latest js technology and us we can build an amaizing web and
                 mobile application to achive your goals.
               </p>
-              <div className="flex-1 flex gap-4 my-8">
+              <div className="flex-1 flex gap-4 my-8 text-[#342c3da1]">
                 <Link href="https://www.linkedin.com/in/bogale-demas?trk=contact-info">
                   <Icon className="icon-[tabler--brand-linkedin]" />
                 </Link>
-                <Link href="https://github.com/bogaledemasrepo/">
+                <Link href="https://t.me/bogaledemas">
                   <Icon className="icon-[tabler--brand-telegram]" />
                 </Link>
                 <Link href="https://github.com/bogaledemasrepo/">
@@ -69,13 +69,13 @@ const page = () => {
               </div>
               <div className="flex gap-2">
                 <button
-                  className="w-full font-semibold border p-2 border-1 border-gray-300  rounded-md"
+                  className="w-full font-semibold border p-3 text-lg border-1 border-gray-300  rounded-md"
                   type="reset"
                 >
                   Clear
                 </button>
                 <button
-                  className="w-full border p-2 border-1 border-blue-300 bg-blue-200 rounded-md font-semibold"
+                  className="w-full border p-3 border-1 text-lg border-blue-300 bg-blue-600 rounded-md font-semibold"
                   type="submit"
                 >
                   Send

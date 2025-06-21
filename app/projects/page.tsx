@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState(false); //
-  const [activeFilter, setActiveFilter] = useState("All Projects");
+  const [activeFilter, setActiveFilter] = useState("All");
   type Project = {
     $id: string;
     title: string;
@@ -52,39 +52,18 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    switch (activeFilter || "All Projects") {
-      case "backend":
-        setActiveFilter("Backend Projects");
-        break;
-      case "frontend":
-        setActiveFilter("Frontend Projects");
-        break;
-      case "mobile":
-        setActiveFilter("Mobile projects");
-        break;
-      default:
-        setActiveFilter("All Projects");
-        break;
-    }
     getProjectList();
-  }, [activeFilter]);
+  }, []);
   return (
     <main className="min-h-[90vh] w-full relative mt-[80px] flex justify-center">
       <section className="w-full max-w-[1080px] my-10 relative">
         <div className="w-full flex items-center justify-center">
           <div className="flex flex-row gap-1 my-8 border-b border-gray-300 p-2">
-            {[
-              "All Projects",
-              "Backend Projects",
-              "Frontend projects",
-              "Mobile projects",
-            ].map((Item, index) => (
+            {["All", "Backend", "Frontend", "Mobile"].map((Item, index) => (
               <button
                 className={`${
-                  activeFilter === Item
-                    ? "bg-blue-950 text-white"
-                    : "bg-slate-200"
-                } p-2 rounded-md font-semibold border border-slate-300 transition-all duration-300 `}
+                  activeFilter == Item
+                } p-3 text-center text-slate-500 border border-slate-200 font-semibold`}
                 key={index}
                 onClick={() => setActiveFilter(Item)}
               >
@@ -92,11 +71,11 @@ const Projects = () => {
               </button>
             ))}
           </div>
-          <div className="absolute right-8">
+          {/* <div className="absolute right-8">
             <Link href="/projects/new">
               <p className="text-[#342c3d76]">Add project</p>
             </Link>
-          </div>
+          </div> */}
         </div>
         <div className="w-full  grid md:grid-cols-2 gap-2 px-8">
           {isLoading && (

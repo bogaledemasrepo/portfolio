@@ -13,12 +13,16 @@ const Footer = () => {
                 ©2025 All right reserved.
               </p>
             </aside>
-            <div className="flex gap-4 items-center flex-row">
-              <Link href="https://www.linkedin.com/in/bogale-demas?trk=contact-info">
-                <Icon className="icon-[tabler--brand-github]" />
-              </Link>
+
+            <div className="flex gap-4 items-center flex-row text-[#342c3da1]">
               <Link href="https://www.linkedin.com/in/bogale-demas?trk=contact-info">
                 <Icon className="icon-[tabler--brand-linkedin]" />
+              </Link>
+              <Link href="https://t.me/bogaledemas">
+                <Icon className="icon-[tabler--brand-telegram]" />
+              </Link>
+              <Link href="https://github.com/bogaledemasrepo/">
+                <Icon className="icon-[tabler--brand-github]" />
               </Link>
             </div>
           </div>
