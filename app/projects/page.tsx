@@ -3,13 +3,11 @@ import Loading from "@/components/Loading";
 import { Models } from "appwrite";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState(false); //
   const [activeFilter, setActiveFilter] = useState("All Projects");
-  const searchParams = useSearchParams();
   type Project = {
     $id: string;
     title: string;
