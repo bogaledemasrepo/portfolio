@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -15,10 +16,16 @@ function ServiceCard({
   return (
     <Link href={link || "/"}>
       <div className="relative">
-        <div className="w-full border border-slate-300 rounded-md relative">
+        <div className="w-full hover:scale-5 border border-slate-300 rounded-md relative">
           <div className="absolute w-full flex items-center justify-center">
-            <div className="w-24 h-24 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white">
-              {icon || "ICON"}
+            <div className="relative w-24 h-24 rounded-full bg-gray-600 flex items-center justify-center font-bold text-white">
+              <Image
+                fill
+                src={icon}
+                alt={title}
+                objectFit="cover"
+                className="w-24 h-24 rounded-full"
+              />
             </div>
           </div>
           <h1 className="font-bold mt-28 my-4 text-center text-lg subtitle">

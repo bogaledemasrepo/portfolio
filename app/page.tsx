@@ -54,7 +54,7 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full container">
-        <h5 className="underline font-bold text-center text-xl my-8 text-[#342c3d76]">
+        <h5 className="underline font-bold text-center text-3xl my-8 text-[#342c3d76]">
           Services
         </h5>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4 gap-2">
@@ -63,21 +63,21 @@ export default function Home() {
               title: "Backend development",
               discription:
                 "Develop backend applications using nodejs, express with sql and non sql",
-              icon: "",
+              icon: "/images/backend.png",
               link: "/projects/?filter=backend",
             },
             {
               title: "Frontend development",
               discription:
                 "Develop frontend applications using reactjs,tailwindcss, styled components.",
-              icon: "",
+              icon: "/images/frontend.jpeg",
               link: "/projects/?filter=frontend",
             },
             {
               title: "Mobile app development",
               discription:
                 "Develop amaizing crose plateform mobile application using React netive",
-              icon: "",
+              icon: "/images/android.png",
               link: "/projects/?filter=mobile",
             },
           ].map((Item, index) => (

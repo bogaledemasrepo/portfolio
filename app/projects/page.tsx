@@ -77,7 +77,7 @@ const Projects = () => {
                         {Item.sourceCodeLink && (
                           <Link
                             href={Item.sourceCodeLink}
-                            className="btn text-sm md:text-lg text-[#342c3d76] border flex-1 border-gray-400"
+                            className="p-2 border border-gray-500 bg-gray-300 text-gray-900 rounded-md flex-1"
                           >
                             Source code
                           </Link>
@@ -85,7 +85,7 @@ const Projects = () => {
                         {Item.previewLink && (
                           <Link
                             href={Item.previewLink}
-                            className="btn text-sm md:text-lg btn-gradient btn-primary flex-1"
+                            className="p-2 border border-gray-300 rounded-md flex-1 bg-blue-600 text-semibold text-lg"
                           >
                             Live preview
                           </Link>
