@@ -1,59 +1,38 @@
 "use client";
-import Loading from "@/components/Loading";
-import { Models } from "appwrite";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import projects from "@/data/projects";
+import { useState } from "react";
 
 const Projects = () => {
-  const [isLoading, setIsLoading] = useState(false); //
-  const [activeFilter, setActiveFilter] = useState("All");
-  type Project = {
-    $id: string;
-    title: string;
-    description: string;
-    thumbnail: string; // Fix typo
-    sourceCodeLink?: string;
-    previewLink?: string;
-  };
-
-  const [projects, setProjects] = useState<Project[]>();
-
-  const getProjectList = async () => {
-    type JsonData =
-      | {
-          success: boolean;
-          data: Models.Document;
-          error: null;
-        }
-      | {
-          success: boolean;
-          data: null;
-          error: unknown;
-        };
-    try {
-      setIsLoading(true);
-      const resp = await fetch("/api/projects");
-      const jsonData = (await resp.json()) as JsonData;
-
-      if (!resp.ok) throw new Error("Failed to fetch projects");
-
-      if (jsonData.success && jsonData.data) {
-        setProjects(jsonData.data.documents);
-      } else {
-        setProjects([]);
-      }
-    } catch (error) {
-      console.error("Error fetching projects:", error);
-      setProjects([]); // Handle errors gracefully
-    } finally {
-      setIsLoading(false);
+  const [filter, setFilter] = useState("All");
+  const [filteredProject, setFilteredProject] = useState(projects);
+  const filterProjects = (filter: string) => {
+    switch (filter) {
+      case "Frontend":
+        setFilter("Frontend");
+        setFilteredProject(() =>
+          projects.filter((item) => item.catagory == "Frontend")
+        );
+        break;
+      case "Backend":
+        setFilter("Backend");
+        setFilteredProject(() =>
+          projects.filter((item) => item.catagory == "Backend")
+        );
+        break;
+      case "Mobile":
+        setFilter("Mobile");
+        setFilteredProject(() =>
+          projects.filter((item) => item.catagory == "Mobile")
+        );
+        break;
+      default:
+        setFilter("All");
+        setFilteredProject(projects);
+        break;
     }
   };
-
-  useEffect(() => {
-    getProjectList();
-  }, []);
   return (
     <main className="min-h-[90vh] w-full relative mt-[80px] flex justify-center">
       <section className="w-full max-w-[1080px] my-10 relative">
@@ -62,37 +41,26 @@ const Projects = () => {
             {["All", "Backend", "Frontend", "Mobile"].map((Item, index) => (
               <button
                 className={`${
-                  activeFilter == Item
+                  filter == Item ? "dark:bg-gray-200 bg-gray-900" : ""
                 } p-3 text-center text-slate-500 border border-slate-200 font-semibold`}
                 key={index}
-                onClick={() => setActiveFilter(Item)}
+                onClick={() => filterProjects(Item)}
               >
                 {Item}
               </button>
             ))}
           </div>
-          {/* <div className="absolute right-8">
-            <Link href="/projects/new">
-              <p className="text-[#342c3d76]">Add project</p>
-            </Link>
-          </div> */}
         </div>
         <div className="w-full  grid md:grid-cols-2 gap-2 px-8">
-          {isLoading && (
-            <div className="mx-auto">
-              <Loading />
-            </div>
-          )}
-
-          {projects &&
-            projects.map((Item, index) => {
+          {filteredProject &&
+            filteredProject.map((Item, index) => {
               return (
                 <div
                   key={index}
                   className="w-full md:max-w-[540px] flex relative flex-1"
                 >
                   <Image
-                    src={Item.thumbnail || "/placeholder.jpg"} // Fallback image
+                    src={Item.tubnail || "/placeholder.jpg"} // Fallback image
                     fill
                     alt={Item.title || "Project image"}
                     className="absolute w-full h-full overflow-hidden"

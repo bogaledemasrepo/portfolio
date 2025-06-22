@@ -1,3 +1,0 @@
-DROP TABLE IF EXISTS Projects;
-CREATE TABLE IF NOT EXISTS Projects (ProjectsId INTEGER PRIMARY KEY, title TEXT, discription TEXT,sourceCodeLink TEXT,perveiwLink TEXT,tubnail TEXT);
-INSERT INTO Projects (ProjectsId,title, discription,sourceCodeLink,perveiwLink,tubnail) VALUES (1, 'Kniky landing page', 'simple landing page web application using nextjs ,typescript,tailwindcss cloudflare','source link','perview link','tubnail address')
