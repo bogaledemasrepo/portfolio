@@ -57,40 +57,34 @@ const Projects = () => {
               return (
                 <div
                   key={index}
-                  className="w-full md:max-w-[540px] flex relative flex-1"
+                  className="w-full bg-black h-[24rem] md:max-w-[540px] flex relative flex-1 bg-img"
                 >
-                  <Image
-                    src={Item.tubnail || "/placeholder.jpg"} // Fallback image
-                    fill
-                    alt={Item.title || "Project image"}
-                    className="absolute w-full h-full overflow-hidden"
-                  />
-                  <div className="bg-gray-200 rounded-md border border-gray-200 shadow-md w-full">
-                    <div className="card-body w-full max-w-[42rem] bg-slate-200 opacity-40 hover:opacity-95 duration-200">
+                  <div className=" h-[18rem]  rounded-md border border-gray-200 shadow-md w-full">
+                    <div className=" relative h-full w-full bg-slate-200 opacity-40 hover:opacity-95 duration-200">
                       <h5 className="card-title mb-2.5 p-4 text-[#342c3d76]">
                         {Item.title || "Untitled Project"}
                       </h5>
                       <p className="mb-4 p-4 text-justify text-lg text-[#342c3d76]">
                         {Item.description || "No description available."}
                       </p>
-                      <div className="card-actions py-4 flex gap-2">
-                        {Item.sourceCodeLink && (
-                          <Link
-                            href={Item.sourceCodeLink}
-                            className="p-2 border border-gray-500 bg-gray-300 text-gray-900 rounded-md flex-1"
-                          >
-                            Source code
-                          </Link>
-                        )}
-                        {Item.previewLink && (
-                          <Link
-                            href={Item.previewLink}
-                            className="p-2 border border-gray-300 rounded-md flex-1 bg-blue-600 text-semibold text-lg"
-                          >
-                            Live preview
-                          </Link>
-                        )}
-                      </div>
+                    </div>
+                    <div className="bg-gray-800/90 w-full  left-0 buttom-0 z-50  p-4 flex gap-2">
+                      {Item.sourceCodeLink && (
+                        <Link
+                          href={Item.sourceCodeLink}
+                          className="p-2 border border-gray-500 bg-gray-300 text-gray-900 rounded-md flex-1"
+                        >
+                          Source code
+                        </Link>
+                      )}
+                      {Item.previewLink && (
+                        <Link
+                          href={Item.previewLink}
+                          className="p-2 border border-gray-300 rounded-md flex-1 bg-blue-600 text-semibold text-lg"
+                        >
+                          Live preview
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>

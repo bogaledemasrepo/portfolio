@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+  body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  }
+.bg-img{
+  background-image: url('/placeholder.jpg');
+  background-size: contain;
+  background-position: center;
+}
 @layer components {
   .mygrid {
     grid-template-columns: 10rem calc(100% - 10rem);
   }
 }
 @layer base {
+
   .title {
     @apply bg-gradient-to-r from-primary to-error bg-clip-text text-transparent font-black text-4xl md:text-6xl w-fit;
   }
