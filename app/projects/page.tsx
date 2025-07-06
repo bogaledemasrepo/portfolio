@@ -33,6 +33,7 @@ const Projects = () => {
         break;
     }
   };
+  console.log(filteredProject);
   return (
     <main className="min-h-[90vh] w-full relative mt-[80px] flex justify-center">
       <section className="w-full max-w-[1080px] my-10 relative">
@@ -57,8 +58,16 @@ const Projects = () => {
               return (
                 <div
                   key={index}
-                  className="w-full bg-black h-[24rem] md:max-w-[540px] flex relative flex-1 bg-img"
+                  className={`w-full bg-black h-[24rem] md:max-w-[540px] flex relative flex-1 bg-[${Item.tubnail}]`}
                 >
+                  <Image
+                    src={Item.tubnail || "/images/placeholder.jpg"}
+                    width={600}
+                    height={600}
+                    objectFit="cover"
+                    className="absolute w-full h-full"
+                    alt=""
+                  />
                   <div className=" h-[18rem]  rounded-md border border-gray-200 shadow-md w-full">
                     <div className=" relative h-full w-full bg-slate-200 opacity-40 hover:opacity-95 duration-200">
                       <h5 className="card-title mb-2.5 p-4 text-[#342c3d76]">
@@ -68,7 +77,7 @@ const Projects = () => {
                         {Item.description || "No description available."}
                       </p>
                     </div>
-                    <div className="bg-gray-800/90 w-full  left-0 buttom-0 z-50  p-4 flex gap-2">
+                    <div className="bg-gray-800/90 w-full absolute  left-0 buttom-0 z-50  p-4 flex gap-2">
                       {Item.sourceCodeLink && (
                         <Link
                           href={Item.sourceCodeLink}
